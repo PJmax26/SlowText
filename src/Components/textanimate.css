@@ -1,0 +1,147 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #00ff73;
+}
+
+header{
+    width: 100vw;
+    padding: 1rem;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+.mainArea{
+    width: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a263d;
+}
+
+main{
+    width: 50vw;
+    margin: 7rem auto;
+}
+
+main input{
+    width: 60vw;
+    height: 4rem;
+    border: 0;
+    outline: 0;
+    padding: 0 1rem;
+    border-radius: 5px;
+    font-size: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.text{
+    position: relative;
+    width: fit-content;
+}
+
+h2.outer{
+    width: fit-content;
+    margin-top: 3rem;
+    font-size: 12vw;
+    text-transform: uppercase;
+    color: #1a263d;
+    -webkit-text-stroke: 0.3vw #373a60;
+}
+
+h2.inner{
+    font-size: 12vw;
+    text-transform: uppercase;
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--primary);
+    color: var(--primary);
+    overflow: hidden;
+    -webkit-text-stroke: 0vw #373a60;
+    animation: textanimate 4s linear infinite;
+}
+
+@keyframes textanimate {
+    0%{
+        width: 0;
+    }
+
+    70%{
+        width: 100%;
+    }
+}
+
+nav{
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav div{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 5px solid transparent;
+}
+
+nav div.active{
+    border-color: black;
+}
+
+.pink{
+    background: #df0052;
+}
+.purple{
+    background: #7000df;
+}
+.orange{
+    background: #ff8400;
+}
+.default{
+    background: var(--primary);
+}
+
+@media screen and (max-width: 800px) {
+    main input{
+        width: 20rem;
+    }
+    nav{
+        width: 20rem;
+        margin: 0;
+    }
+
+    main input{
+        width: 90%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .text{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 40vw);
+    }
+}
